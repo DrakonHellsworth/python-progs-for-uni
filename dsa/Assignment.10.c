@@ -1,0 +1,1 @@
+//Linked list length even or odd

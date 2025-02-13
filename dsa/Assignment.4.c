@@ -1,0 +1,1 @@
+//Delete a node in single linked list

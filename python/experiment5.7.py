@@ -1,0 +1,5 @@
+s1=set(input("Enter the fruits in s1: ").split(","))
+s2=set(input("Enter the fruits in s2: ").split(","))
+print("Fruits which are in both sets s1 and s2: ",s1&s2)
+print("Fruits only in s1 but not in s2: ",s1-s2)
+print("Count of all fruits from s1 and s2: ",len(s1|s2))

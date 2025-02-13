@@ -1,0 +1,1 @@
+//count nodes of a singly linked list
