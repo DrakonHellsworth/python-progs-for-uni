@@ -1,3 +1,4 @@
+//done
 // create a program to delete a node from a singly linked list after a node pointer x
 #include <stdio.h>
 #include <stdlib.h>

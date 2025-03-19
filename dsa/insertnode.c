@@ -7,38 +7,56 @@ struct node
     int d;
     struct node *n;
 };
+struct node *head=NULL;
+struct node *insert(struct node *head,int data)
+{
+    struct node *newnode=(struct node*)malloc(sizeof(struct node));
+    newnode->d=data;
+    newnode->n=NULL;
+    if(head==NULL)
+    {
+        head=newnode;
+    }
+    else
+    {
+        struct node *temp=head;
+        while(temp->n!=NULL)
+        {
+            temp=temp->n;
+        }
+        temp->n=newnode;
+    }
+    return head;
+}
+void display(struct node *head)
+{
+    struct node *temp=head;
+    while(temp!=NULL)
+    {
+        printf("%d ",temp->d);
+        temp=temp->n;
+        }
+        printf("\n");
+    }
 int main()
 {
-    struct node *first=NULL;
-    struct node *second=NULL;
-    struct node *third=NULL;
-    first=(struct node *)malloc(sizeof(struct node));
-    second=(struct node *)malloc(sizeof(struct node));
-    third=(struct node *)malloc(sizeof(struct node));
-    first->d=1;
-    first->n=second;
-    second->d=2;
-    second->n=third;
-    third->d=3;
-    third->n=NULL;
-    struct node *ptr=first;
-    while(ptr->n!=NULL)
+    int i,n,data;
+    printf("Enter the number of nodes: ");
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
     {
-        printf("%d",ptr->d);
-        ptr=ptr->n;
+        printf("Enter the data for node %d: ",i+1);
+        scanf("%d",&data);
+        head=insert(head,data);
     }
-    int n1;
-    printf("Enter the new element: ");
-    scanf("%d",&n1);
-    struct node *newnode=(struct node *)malloc(sizeof(struct node));
-    newnode->d=n1;
-    newnode->n=NULL;
-    ptr->n=newnode;
-    ptr=newnode;
-    while(ptr!=NULL)
-    {
-        printf("%d",ptr->d);
-        ptr=ptr->n;
-    }
+    struct node *temp=head;
+    printf("The linked list is: ");
+    display(temp);
+    printf("Enter the data to be inserted: ");
+    scanf("%d",&data);
+    head=insert(head,data);
+    temp=head;
+    printf("The linked list after insertion is: ");
+    display(temp);
     return 0;
 }

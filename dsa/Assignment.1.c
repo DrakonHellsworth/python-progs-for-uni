@@ -37,7 +37,7 @@ void display()
     }
     if(temp!=NULL)
     {
-        printf("   list is cyclic\n");
+        printf("-----list is cyclic\n");
     }
     printf("\n");
 }
@@ -45,14 +45,14 @@ void createLoop(int pos)
 {
     if(pos<=0)
         return;
-    struct node *ls=head;
+    struct node *h=head;
     int c=1;
-    while(ls!=NULL&&c<pos) 
+    while(h!=NULL&&c<pos) 
     {
-        ls=ls->n;
+        h=h->n;
         c++;
     }
-    if(ls==NULL) 
+    if(h==NULL) 
     {
         printf("Invalid position\n");
         return;
@@ -60,7 +60,7 @@ void createLoop(int pos)
     struct node *temp=head;
     while(temp->n!=NULL)
         temp=temp->n;
-    temp->n=ls;
+    temp->n=h;
     printf("Loop created: Last node now points to node at position %d.\n", pos);
 }
 void rmloop() 

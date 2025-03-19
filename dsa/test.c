@@ -1,67 +1,85 @@
-// Represent a Polynomial using Linked List and display the Polynomial.(Note take the polynomial as a whole and at once example 3x^2 + 2x + 1)
 #include <stdio.h>
 #include <stdlib.h>
-struct node 
-{
-    int coef;
-    int exp;
-    struct node *next;
+
+struct Node {
+    int data;
+    struct Node* next;
 };
-struct node *head=NULL;
-void insert(int coef,int exp)
-{
-    struct node *newnode=(struct node *)malloc(sizeof(struct node));
-    newnode->coef=coef;
-    newnode->exp=exp;
-    newnode->next=head;
-    head=newnode;
+
+void insert(struct Node** head, int data) {
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = data;
+    newNode->next = NULL;
+
+    if (*head == NULL) {
+        *head = newNode;
+        return;
+    }
+
+    struct Node* temp = *head;
+    while (temp->next != NULL)
+        temp = temp->next;
+
+    temp->next = newNode;
 }
-void display()
-{
-    struct node *temp=head;
-    while(temp!=NULL)
-    {
-        if(temp->next!=NULL)
-        {
-    if(temp->exp==0)
-    {
-        printf("%d ",temp->coef);
+
+void createLoop(struct Node* head, int position) {
+    struct Node* temp = head;
+    struct Node* loopNode = NULL;
+    int count = 1;
+
+    while (temp->next != NULL) {
+        if (count == position)
+            loopNode = temp;
+        temp = temp->next;
+        count++;
     }
-    else    
-    {
-        printf("%dx^%d + ",temp->coef,temp->exp);
-    }
-    temp=temp->next;
-        }
-        else
-        {
-            if(temp->exp==0)
-            {
-                printf("%d ",temp->coef);
+    temp->next = loopNode;
+}
+
+int countLoopLength(struct Node* head) {
+    struct Node *slow = head, *fast = head;
+    
+    while (fast && fast->next) {
+        slow = slow->next;
+        fast = fast->next->next;
+
+        if (slow == fast) {
+            int loopLength = 1;
+            struct Node* temp = slow;
+            while (temp->next != slow) {
+                loopLength++;
+                temp = temp->next;
             }
-            else
-            {
-                printf("%dx^%d",temp->coef,temp->exp);
-            }
-            temp=temp->next;
+            return loopLength;
         }
-        }
-        }
-int main()
-{
-    int n,i;
-    printf("Enter the number of terms in the polynomial: ");
-    scanf("%d",&n);
-    for(i=0;i<n;i++)
-    {
-        int coef,exp;
-        printf("Enter the coefficient %d: ",i+1);
-        scanf("%d",&coef);
-        printf("Enter the exponent %d: ",i+1);
-        scanf("%d",&exp);    
-        insert(coef,exp);
     }
-    printf("The polynomial is: ");
-    display();
     return 0;
+}
+
+int main() {
+    struct Node* head = NULL;
+    int n, value, position;
+
+    printf("Enter number of nodes: ");
+    scanf("%d", &n);
+
+    printf("Enter elements:\n");
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &value);
+        insert(&head, value);
     }
+
+    printf("Enter loop position (1-based index, 0 for no loop): ");
+    scanf("%d", &position);
+    if (position > 0)
+        createLoop(head, position);
+
+    int loopLength = countLoopLength(head);
+    if (loopLength > 0)
+        printf("Loop detected! Length of loop: %d\n", loopLength);
+    else
+        printf("No loop detected.\n");
+
+    return 0;
+}

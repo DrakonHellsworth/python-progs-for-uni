@@ -4,7 +4,6 @@ def printFibonacci(n):
         return n
     else:   
         return(printFibonacci(n-1) + printFibonacci(n-2))
-    #Test the function
 n=int(input("Enter a positive integer: "))
 if n <= 0:
     print("Please enter a positive integer")

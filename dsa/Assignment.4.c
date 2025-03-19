@@ -44,9 +44,9 @@ int main()
         scanf("%d",&data);
         insert(data);
     }
-    printf("The linked list is: ");
+    printf("The linked list is: \n");
     display();
-    printf("Enter the position where you want to insert the new node: ");
+    printf("\nEnter the position where you want to insert the new node: ");
     scanf("%d",&pos);
     printf("Enter the data for the new node: ");
     scanf("%d",&data);

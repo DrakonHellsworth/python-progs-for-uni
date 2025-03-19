@@ -1,4 +1,5 @@
-// ta program to count the size of the linked list wether it is even or odd
+//done
+// a program to count the size of the linked list wether it is even or odd
 #include <stdio.h>
 #include <stdlib.h>
 struct node

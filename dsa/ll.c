@@ -24,7 +24,7 @@ int main()
     struct node *ptr=first;
     while(ptr!=NULL)
     {
-        printf("%d",ptr->d);
+        printf("%d ",ptr->d);
         ptr=ptr->n;
     }
 return 0;

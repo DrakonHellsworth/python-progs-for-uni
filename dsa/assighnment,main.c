@@ -58,7 +58,7 @@ struct node *adder(struct node *head1,struct node *head2)
     struct node *head3=NULL;
     struct node *curr3=NULL;
     int carry=0;
-    while(curr1!=NULL || curr2!=NULL || carry!=0)
+    while(curr1!=NULL||curr2!=NULL||carry!=0)
     {
         int sum=0;
         if(curr1!=NULL)
@@ -115,9 +115,9 @@ int main()
     head2=rev(head2);
     head3=adder(head1,head2);
     head3=rev(head3);
-    printf("First Linked List (normal order): ");
+    printf("First Number is: ");
     display(rev(head1));
-    printf("Second Linked List (normal order): ");
+    printf("Second Number is: ");
     display(rev(head2));
     printf("Sum Linked List: ");
     display(head3);

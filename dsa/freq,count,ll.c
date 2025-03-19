@@ -1,3 +1,4 @@
+//done
 //count the number of each duplicated elements in a linked list
 #include <stdio.h>
 #include <stdlib.h>

@@ -39,7 +39,7 @@ void display()
     }
     if(temp!=NULL)
     {
-        printf("   list is cyclic");
+        printf("---list is cyclic");
     }
     printf("\n");
 }
