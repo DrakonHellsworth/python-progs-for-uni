@@ -15,11 +15,11 @@ void deleteMiddle(struct node *head)
     struct node *prev = NULL;
     while (fast_ptr != NULL && fast_ptr->next != NULL)
     {
-        fast_ptr = fast_ptr->next->next;
-        prev = slow_ptr;
-        slow_ptr = slow_ptr->next;
+        fast_ptr=fast_ptr->next->next;
+        prev=slow_ptr;
+        slow_ptr=slow_ptr->next;
     }
-    prev->next = slow_ptr->next;
+    prev->next=slow_ptr->next;
     free(slow_ptr);
 }
 int main()
