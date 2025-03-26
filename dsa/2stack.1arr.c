@@ -1,3 +1,4 @@
+//done
 //Create two stack in a single array
 #include <stdio.h>
 int stack[100];

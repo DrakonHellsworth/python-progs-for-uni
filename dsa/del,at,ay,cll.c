@@ -74,3 +74,6 @@ int main()
     printf("\nEnter the position: ");
     scanf("%d",&pos);
     head=delete(head,pos);
+    display();
+    return 0;
+}

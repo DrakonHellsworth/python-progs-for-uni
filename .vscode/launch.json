@@ -61,8 +61,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "e:/python progs for uni",
-      "program": "e:/python progs for uni/build/Debug/outDebug",
+      "cwd": "e:/python progs for uni/dsa",
+      "program": "e:/python progs for uni/dsa/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

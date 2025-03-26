@@ -1,4 +1,3 @@
-//done
 // create a linked list with user defined number of nodes
 #include<stdio.h>
 #include<stdlib.h>

@@ -4,7 +4,7 @@
 int *q;
 int f=-1;
 int r=-1;
-void enq()
+void enq(int n)
 {
     int item;
     printf("Enter the item to be inserted:");
@@ -16,8 +16,15 @@ void enq()
     }
     else
     {
+        if(f==0&&r==n-1)
+        {
+            printf("Queue is full\n");
+        }
+        else
+        {
         r++;
         q[r]=item;
+        }
     }
 }
 void deq()
@@ -70,7 +77,7 @@ int main()
         switch (choice)
         {
         case 1:
-            enq();
+            enq(n);
             break;
         case 2:
             deq();

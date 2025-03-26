@@ -38,17 +38,17 @@ void display(struct node *head)
 }
 int count (struct node *head,int data)
 {
-    int count=0;
+    int c=0;
     struct node *temp=head;
     while(temp!=NULL)   
     {
         if(temp->d==data)
         {
-            count++;
+            c++;
         }
         temp=temp->n;
     }
-    return count;
+    return c;
 }
 int main()
 {

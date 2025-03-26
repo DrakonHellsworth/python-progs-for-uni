@@ -1,3 +1,4 @@
+//done
 // you are given a node of a singly linked list where you have to delete a value of the given node from the linked list but you are not given the head of the list
 #include <stdio.h>
 #include <stdlib.h>

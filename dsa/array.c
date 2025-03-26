@@ -1,4 +1,4 @@
-//done
+//DONE
 // print the elements of the array
 #include <stdio.h>
 int main()

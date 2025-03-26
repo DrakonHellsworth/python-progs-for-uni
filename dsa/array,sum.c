@@ -1,4 +1,4 @@
-//done
+//DONE
 // find the sum of an array
 #include <stdio.h>
 int main()

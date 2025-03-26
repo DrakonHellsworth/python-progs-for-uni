@@ -9,11 +9,17 @@
 #c. Display sum of areas of all cities 
 
 file=open("city.txt","r")
-for line in file:
-    print(line.strip())
-    if float(line.split()[1])>10:
-        print(line.split()[0])
+for i in file:
+    print(i.strip())
+
+file.seek(0)
+for i in file:
+    if(float(i.split()[1])>10):
+        print(i.split()[0])
+
+file.seek(0)
 sum=0
-for line in file:
-    sum+=float(line.split()[2])
-print(sum)
+for i in file:
+    sum+=float(i.split()[2])
+print("Sum of areas of all cities is:",sum)
+file.close()

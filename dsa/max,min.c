@@ -1,4 +1,4 @@
-//done
+//DONE
 //find max and min element in an array
 #include <stdio.h>
 int main() 

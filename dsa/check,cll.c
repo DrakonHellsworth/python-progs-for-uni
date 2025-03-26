@@ -1,3 +1,4 @@
+//done
 // check wether a link is circular at any point or not
 #include <stdio.h>
 #include <stdlib.h>
@@ -46,7 +47,7 @@ int check(struct node *head)
     if(isCircular(head))
     {
         printf("The linked list is circular\n");
-        return 1;
+        return 0;
     }
     else
     {

@@ -1,4 +1,4 @@
-//done
+//DONE
 //multiply two matrices
 #include<stdio.h>
 int main()

@@ -1,4 +1,4 @@
-//done
+//DONE
 //product of an array with a single element
 #include<stdio.h>
 int main()

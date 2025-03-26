@@ -1,4 +1,4 @@
-//done
+//DONE
 // make an code for deleting an element in an array
 #include<stdio.h>
 int main()

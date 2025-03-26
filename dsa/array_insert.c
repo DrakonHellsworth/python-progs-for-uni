@@ -1,4 +1,4 @@
-//done
+//DONE
 // to insert an element in an array
 #include<stdio.h>
 int main()

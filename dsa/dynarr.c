@@ -1,4 +1,4 @@
-//done
+//DONE
 // program to create a dynamic array
 #include <stdio.h>
 #include <stdlib.h>

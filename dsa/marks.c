@@ -1,3 +1,4 @@
+//DONE
 //define structure of students having data members name, address and marks in Clanguage , marks in information technology,take data for n students in an array dynamically and find the total mars of 10
 #include<stdio.h>
 #include<stdlib.h>
@@ -30,7 +31,7 @@ int main()
     {
         sum=sum+s[i].clanguage+s[i].it;    
     }
-    printf("Total marks of 10 students: %d\n",sum); 
+    printf("Total marks of %d students: %d\n",n,sum); 
     free(s);
     return 0;
 }

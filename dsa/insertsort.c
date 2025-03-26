@@ -1,4 +1,4 @@
-//done
+//DONE
 //insertion sort
 #include<stdio.h>
 int main()

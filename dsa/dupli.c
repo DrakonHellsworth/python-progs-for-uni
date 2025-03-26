@@ -1,5 +1,5 @@
-//done
-// find the number of duplicate elements
+//DONE
+// find the number of duplicate elements in the array
 #include <stdio.h>
 int main() 
 {

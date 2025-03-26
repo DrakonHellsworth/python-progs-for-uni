@@ -1,4 +1,3 @@
-//done
 //pointer to structure
 #include <stdio.h>
 struct student 

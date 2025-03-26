@@ -22,7 +22,7 @@ int precedence(char ch)
 }
 int main()
 {
-    char exp[100],postfix[100];
+    char exp[100],pos[100];
     int i,j=0;
     printf("Enter the infix expression: ");
     scanf("%s",exp);
@@ -34,7 +34,7 @@ int main()
         {
             while(stack[top]!='(')
             {
-                postfix[j++]=stack[top--];
+                pos[j++]=stack[top--];
             }
             top--;
         }
@@ -42,18 +42,17 @@ int main()
         {
             while(top!=-1&&precedence(exp[i])<=precedence(stack[top]))
             {
-                postfix[j++]=stack[top--];
+                pos[j++]=stack[top--];
             }
             push(exp[i]);    
         }
         else
-            postfix[j++]=exp[i];
+            pos[j++]=exp[i];
     }
     while(top!=-1)
     {
-        postfix[j++]=stack[top--];
+        pos[j++]=stack[top--];
     }
-    postfix[j]='\0';
-    printf("The postfix expression is: %s",postfix);
+    printf("The postfix expression is: %s",pos);
     return 0;
 }

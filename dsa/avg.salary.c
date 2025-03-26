@@ -1,3 +1,4 @@
+//DONE
 //define a structure of employee having data members name,address,age and salary,take data for an employee in an array dynamically and fing the avg salary
 #include<stdio.h>
 #include<stdlib.h>
