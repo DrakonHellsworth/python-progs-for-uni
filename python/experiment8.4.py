@@ -10,13 +10,13 @@
 #Sample Output : 
 #Error Code: integer division or modulo by zero  
 #Error Code: invalid literal for int() with base 10: '$' 3
-
-N=int(input())
-for _ in range(N):
+N=int(input("Enter the number of test cases: "))
+for i in range(N):
     try:
-        a,b=map(int,input().split())
-        print(a//b)
+        a,b=input().split()
+        a,b=int(a), int(b)
+        print(a // b)
     except ZeroDivisionError as e:
-        print(f"Error Code: {e}")
+        print("Error Code:",e)
     except ValueError as e:
-        print(f"Error Code: {e}")
+        print("Error Code:",e)

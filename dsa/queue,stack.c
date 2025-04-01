@@ -1,3 +1,4 @@
+//DONE
 //implement queue using stack and perform enqueue dequeue and display on it
 #include <stdio.h>
 int s1[100];

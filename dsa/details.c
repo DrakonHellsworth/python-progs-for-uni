@@ -1,3 +1,4 @@
+//done
 #include<stdio.h>
 struct date
 {

@@ -1,3 +1,4 @@
+//done
 // to check wether a list is a plaindrome or not(with least usage of space and time complexity)
 #include <stdio.h>
 #include <stdlib.h>

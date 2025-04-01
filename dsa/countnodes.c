@@ -1,3 +1,4 @@
+//done
 //count the number of nodes in a linked list
 #include <stdio.h>
 #include <stdlib.h>
