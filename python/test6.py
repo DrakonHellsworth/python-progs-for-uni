@@ -1,17 +1,16 @@
-class shape:
-    def __init__(self):
-        self.color=(0,0,0)
-class rectangle(shape):
-    def __init__(self,w,h):
-        shape.__init__(self)
-        self.width=w
-        self.height=h
-            
-    def area(self):
-        return self.width*self.height
-            
-r1=rectangle(10,5)
-print (r1.width)
-print (r1.height)
-print (r1.color)
-print (r1.area())
+import pywhatkit as pwk
+import pyautogui
+import time
+
+pn = "+919027233941"  # Recipient number
+mssg = "This is what you wanted, right? Fak u"
+
+n = 5  # Number of times to send the message
+
+for i in range(n):
+    pwk.sendwhatmsg_instantly(pn, mssg, wait_time=10, tab_close=True)
+    time.sleep(12)  # Wait for WhatsApp Web to load
+    pyautogui.press("enter")  # Press Enter to send
+    time.sleep(5)  # Wait before sending next message
+
+print("Message sent successfully")

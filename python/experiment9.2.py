@@ -20,17 +20,16 @@ class std:
     def per(self):
         return (self.phy+self.chem+self.maths)/3
     def result(self):
-        if self.perc()>40:
+        if self.per()>40 and self.phy>40 and self.chem>40 and self.maths>40:
             print("Pass")
         else:
             print("Fail")
     def avg(stds):
         total=0
         for i in stds:
-            total+=stds.per()
-        return total/len(stds)
+            total+=i.per()
+        return total/len(stds) 
 
-#main program
 n=int(input("Enter number of students: "))
 stds=[]
 for i in range(n):
@@ -39,10 +38,10 @@ for i in range(n):
     phy=float(input("Enter Physics marks: "))
     chem=float(input("Enter Chemistry marks: "))
     maths=float(input("Enter Maths marks: "))
-    std=std(name,sapid,phy,chem,maths)
-    stds.append(std)
-for std in stds:
-    std.display()    
-    std.result()
-    print("Marks Percentage:",std.perc())
+    st=std(name,sapid,phy,chem,maths)
+    stds.append(st)
+for st in stds:
+    st.display()    
+    print("Marks Percentage:",st.per())
+    st.result()
 print("Average marks of class:",std.avg(stds))

@@ -1,13 +1,25 @@
-// create an input restricted queue and perform enqueue dequeue and display operations
-#include <stdio.h>
+// create an output restricted queue and perform enqueue dequeue and display operations
+#include<stdio.h>
 int q[100];
-int f=-1;
-int r=-1;
-void enqueue(int x)
+int f=-1,r=-1;
+void enqueue(int x,int c)
 {
-    if(r==99)
+    if(c==2)
     {
-        printf("Queue is full\n");
+        if(f==-1)
+        {
+            f=r=0;
+            q[r]=x;
+        }
+        else
+        {
+            if(r==99)
+            {
+                printf("Queue is full\n");
+                return;
+            }
+        q[++r]=x;
+        }
     }
     else
     {
@@ -18,40 +30,33 @@ void enqueue(int x)
         }
         else
         {
-            r++;
-            q[r]=x;
+            if(f==0)
+            {
+                printf("The front is already at begining cannot input from front");
+            }
+            else 
+            {
+            q[--f]=x;
+            }
         }
     }
 }
-void dequeue(int c)
+void dequeue()
 {
     if(f==-1)
     {
         printf("Queue is empty\n");
     }
-    else
+    else 
     {
-        if(c==1)
+        if(r==f)
         {
-            printf("Deleted item from front of the queue is:%d\n",q[f]);
-            if(f==r)
-            {
-                f=r=-1;
-            }
-            else
-            {
-            f++;
-            }
+            printf("The dequeued element is %d",q[r--]);
+            f=r=-1;
         }
-        else
+        else 
         {
-            printf("Deleted item from rear of the queue is:%d\n",q[r]);
-            if(f==r)
-            {
-                f=r=-1;
-            }
-            else
-            r--;
+        printf("The dequeued element is %d",q[r--]);
         }
     }
 }
@@ -84,12 +89,12 @@ int main()
             case 1:
                 printf("Enter the element to enqueue: ");
                 scanf("%d",&x);
-                enqueue(x);
+                printf("Enter 1 to enter from front\nEnter 2 to enter from rear\n");
+                scanf("%d",&a);
+                enqueue(x,a);
                 break;    
             case 2:
-                printf("Enter 1 to delete from front\nEnter 2 to delete from rear\n");
-                scanf("%d",&a);
-                dequeue(a);
+                dequeue();
                 break;
             case 3:
                 display();
