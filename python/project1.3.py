@@ -30,6 +30,12 @@ E.pack(pady=5)                                                       #This packs
 E.focus_set()                                                        #This sets the focus on the input 
 E.bind("<Return>",lambda event:plot())                               #This binds the enter key to the plot function
 
+def close():
+    root.destroy()                                                   #This function closes the main window
+
+close=tk.Button(frame,text="Close",command=close,font=("Arial",13,"bold"),bg="#252256",fg="white")#This creates a button named close and calls the function close when clicked
+close.pack(side=tk.BOTTOM,pady=10)                          #This packs the button on the bottom of the frame
+
 graph=None                                                           #This is a Global variable to store the 3D plot
 allow={                                                              #This is a dictionary of allowed functions
     'sin':np.sin,

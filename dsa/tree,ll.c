@@ -1,76 +1,52 @@
-//create a program to create a binary tree using linked list
-#include <stdio.h>
-#include <stdlib.h>
+//create a program to display binary tree in tree format
+#include<stdio.h>
+#include<stdlib.h>
+#define SPACE 5
 struct node 
 {
     int d;
     struct node *l;
     struct node *r;
 };
-struct node* create(int data)
+struct node* create() 
 {
-    struct node *new=(struct node*)malloc(sizeof(struct node));
-    new->d=data;
-    new->l=NULL;
-    new->r=NULL;
-    return new;
-}
-void inorder(struct node *temp) 
-{
-    if(temp!=NULL) 
+    int x;
+    printf("Enter data (-1 for NULL):");
+    scanf("%d",&x);
+    if(x==-1) 
     {
-        inorder(temp->l);
-        printf("%d->", temp->d);
-        inorder(temp->r);
+        return NULL;
     }
+    struct node* new=(struct node*)malloc(sizeof(struct node));
+    new->d=x;
+    printf("Enter left child of %d:\n",x);
+    new->l=create();
+    printf("Enter right child of %d:\n",x);
+    new->r=create();
+return new;
 }
-void preorder(struct node *temp) 
-{
-    if(temp!=NULL) 
-    {
-        printf("%d->",temp->d);
-        preorder(temp->l);
-        preorder(temp->r);
-    }
-}
-void postorder(struct node *temp) 
-{
-    if(temp!=NULL) 
-    {
-        postorder(temp->l);
-        postorder(temp->r);
-        printf("%d->",temp->d);
-    }
-}
-void display(struct node *root) 
+void display(struct node *root,int s) 
 {
     if(root==NULL) 
     {
-        printf("Tree is empty\n");
-    } 
-    else 
-    {
-        printf("Inorder traversal of the binary tree:\n");
-        inorder(root);
-        printf("NULL");
-        printf("\nPreorder traversal of the binary tree:\n");
-        preorder(root);
-        printf("NULL");
-        printf("\nPostorder traversal of the binary tree:\n");
-        postorder(root);
-        printf("NULL");
+        return;
     }
+    s+=SPACE;
+    display(root->r,s);
+    
+    printf("\n");
+    for(int i=SPACE;i<s;i++)
+    {
+        printf(" ");
+    }
+    printf("%d\n",root->d);
+    display(root->l,s);
 }
 int main() 
 {
     struct node *root=NULL;
-    root=create(1);
-    root->l=create(2);
-    root->r=create(3);
-    root->l->l=create(4);
-    root->l->r=create(5);
-    root->r->l=create(6);
-    root->r->r=create(7);
-    display(root);
+    root=create();
+    printf("\nTree structure:\n");
+    display(root,0);
     return 0;
 }

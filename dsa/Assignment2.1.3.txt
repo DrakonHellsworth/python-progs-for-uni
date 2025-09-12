@@ -1,0 +1,8 @@
+Q)Why do we need Prefix and Postfix notations?
+
+Prefix and Postfix notations are needed to avoid using parentheses in mathematical expressions. In infix notation, 
+we rely on parentheses to decide the order of operations, but in prefix and postfix, the position of operators and operands alone determines the order, 
+making the expression much simpler for a computer to process. Prefix notation, also called Polish Notation, 
+and Postfix notation, known as Reverse Polish Notation (RPN), are commonly used in computer science. 
+They are especially useful in stack-based programming languages and in building algorithms for evaluating 
+expressions because they eliminate ambiguity and make computations faster and more efficient.

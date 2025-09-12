@@ -1,0 +1,46 @@
+1. Bubble Sort
+   Repeatedly swaps adjacent elements if they are in the wrong order.
+   Best when array is nearly sorted.
+   Slow for big data because of O(n^2).
+
+2. Selection Sort
+   Selects the minimum element and puts it in correct position.
+   Always does n² comparisons, even if array is sorted.
+   Simple but inefficient for large arrays.
+
+3. Insertion Sort
+   Picks elements one by one and places them in the correct position.
+   Very fast for small or nearly sorted data.
+   Best for small data sets.
+
+4. Merge Sort
+   Divide array into halves, sort and merge them.
+   Always O(n log n) even for worst case.
+   Needs extra space for temporary arrays.
+
+5. Quick Sort
+   Picks a pivot, partitions array around pivot.
+   Very fast in average case is O(n log(n)).
+   Worst case happens when the pivot is the smallest or largest element time taken becomes O(n^2)
+   In-place,no extra array needed like merge sort.
+
+6. Binary Search
+   Only on sorted arrays.
+   Divide array into half each time reducing search space exponentially.
+   Best way to search if data is sorted.
+
+
+
+Algorithm	          Best Case 	Average Case	 Worst Case 	Space Complexity        	Note to be taken
+
+Bubble Sort	          O(n)	           O(n²)	       O(n²)	            O(1)	        Good for small arrays, bad for large.
+
+Selection Sort	      O(n²)	           O(n²)	       O(n²)	            O(1)	       Always O(n²), even if already sorted.
+
+Insertion Sort	      O(n)	           O(n²)	       O(n²)	            O(1)	       Fast for nearly sorted arrays.
+
+Merge Sort	          O(n log n)	O(n log n)	     O(n log n)	            O(n)	       Very stable, but needs extra memory.
+
+Quick Sort	          O(n log n)	O(n log n)	        O(n²)	          O(log n)	       Very fast in practice, worst case rare.
+
+Binary Search	      O(1)	          O(log n)	        O(log n)	        O(1)	       Needs sorted array.

@@ -34,7 +34,6 @@ void delete(struct node *head,int data)
         printf("List is empty");
         return;
     }
-    // if head node is to be deleted
     if(head->d==data)
     {
         struct node *temp=head;

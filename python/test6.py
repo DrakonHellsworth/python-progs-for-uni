@@ -1,16 +1,11 @@
-import pywhatkit as pwk
-import pyautogui
-import time
+from sqlalchemy import create_engine
+import pandas as pd
 
-pn = "+919027233941"  # Recipient number
-mssg = "This is what you wanted, right? Fak u"
+# Create some dummy data
+df = pd.DataFrame({'name': ['Alice', 'Bob'], 'age': [25, 30]})
 
-n = 5  # Number of times to send the message
+# Create an engine (example: SQLite)
+engine = create_engine('sqlite:///test.db')
 
-for i in range(n):
-    pwk.sendwhatmsg_instantly(pn, mssg, wait_time=10, tab_close=True)
-    time.sleep(12)  # Wait for WhatsApp Web to load
-    pyautogui.press("enter")  # Press Enter to send
-    time.sleep(5)  # Wait before sending next message
-
-print("Message sent successfully")
+# Save DataFrame to SQL table
+df.to_sql('data', con=engine, if_exists='replace', index=False)

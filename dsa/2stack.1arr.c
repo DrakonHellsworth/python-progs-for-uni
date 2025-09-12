@@ -8,8 +8,7 @@ void push1(int x)
 {
     if(top1+1<top2)
     {
-        top1++;
-        stack[top1]=x;
+        stack[top1++]=x;
     }
     else
     {
@@ -20,12 +19,33 @@ void push2(int x)
 {
     if(top2-1>top1)
     {
-        top2--;
-        stack[top2]=x;
+        stack[top2--]=x;
     }
     else
     {
         printf("Stack overflow for stack2\n");
+    }
+}
+void pop1()
+{
+    if(top1>=0)
+    {
+        top1--;
+    }
+    else
+    {
+        printf("Stack underflow for stack1\n");
+    }
+}
+void pop2()
+{
+    if(top2<100)
+    {
+        top2++;
+    }
+    else
+    {
+        printf("Stack underflow for stack2\n");
     }
 }
 void display1()
@@ -66,6 +86,12 @@ int main()
         push2(d);
     }
     display1();
+    display2();
+    printf("Popping from stack1\n");
+    pop1();
+    display1();
+    printf("Popping from stack2\n");    
+    pop2();
     display2();
     return 0;
 }
