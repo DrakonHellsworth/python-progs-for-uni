@@ -1,5 +1,4 @@
 //done
-
 //create a stack with an array and perform push pop and display on it
 #include <stdio.h>
 int top=-1;
